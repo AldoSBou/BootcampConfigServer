@@ -1,14 +1,17 @@
 server:
-  port: 9000
+  port: 9001
 spring:
   application:
     name: config-server
 #Config Server Configuration
-    cloud:
-      config:
-        server:
-          git:
-            uri: XXXXXXXXXXXXXXXXX
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AldoSBou/BootcampConfigServerFiles
+          defaultLabel: develop
+          cloneOnStart: true
+          refreshRate: 15 #Se busca cada 5 segundos una nueva config
 
 #Eureka Client Configuration
 eureka:
